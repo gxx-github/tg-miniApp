@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="24px" viewBox="0 0 26 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Treasure hunt@2x</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="26" height="26"></rect>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="99.8033217%" id="linearGradient-3">
+            <stop stop-color="#84EA9B" offset="0%"></stop>
+            <stop stop-color="#03DA9F" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="加载状态" transform="translate(-173, -713)">
+            <g id="底部导航-选中" transform="translate(-2, 698)">
+                <g id="Treasure-hunt" transform="translate(125, 0)">
+                    <g transform="translate(50, 14)">
+                        <mask id="mask-2" fill="white">
+                            <use xlink:href="#path-1"></use>
+                        </mask>
+                        <g id="蒙版"></g>
+                        <g id="编组-15" mask="url(#mask-2)">
+                            <g transform="translate(0, 1)">
+                                <path d="M2,15 L16.6983193,15 C17.2969469,15 17.7822305,15.4852835 17.7822305,16.0839111 C17.7822305,16.6825387 18.267514,17.1678223 18.8661416,17.1678223 L25.1476807,17.1678223 C25.6184036,17.1678223 26,17.5494186 26,18.0201416 C26,18.5447618 25.7108549,19.0266746 25.2479567,19.2735583 L17.2684116,23.5293969 C16.689084,23.8383775 16.0426048,24 15.3860307,24 L2,24 C0.8954305,24 1.06988736e-15,23.1045695 0,22 L0,17 C-1.3527075e-16,15.8954305 0.8954305,15 2,15 Z" id="矩形" fill="#BCEAD9"></path>
+                                <circle id="椭圆形" fill="url(#linearGradient-3)" cx="13" cy="11" r="11"></circle>
+                                <g id="积分夺宝--一元夺宝" stroke-width="1" fill="none" transform="translate(8, 8)" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M2.38313649,0 L7.11686351,0 C7.42207699,-1.15334637e-15 7.71058032,0.139386488 7.90027249,0.37849347 L8.99674857,1.76060158 C9.29018222,2.13047469 9.28494519,2.65518475 8.98418748,3.01912736 L5.52084789,7.21006512 C5.16903188,7.63579265 4.53870829,7.69570978 4.11298075,7.34389376 C4.06424058,7.30361548 4.01943039,7.25880529 3.97915211,7.21006512 L0.515812515,3.01912736 C0.215054806,2.65518475 0.209817782,2.13047469 0.503251427,1.76060158 L1.59972751,0.37849347 C1.78941968,0.139386488 2.07792301,-1.65977798e-16 2.38313649,0 Z" id="路径" stroke="#FFFFFF" stroke-width="0.5" fill="#FFFFFF"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
