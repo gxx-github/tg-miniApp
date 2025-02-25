@@ -1,0 +1,59 @@
+.scrollList {
+    height: 100%;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: relative;
+  }
+  
+  .pullDownContent {
+    min-height: 100%;
+    will-change: transform;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .pullDownIndicator {
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 14px;
+    position: absolute;
+    top: -50px;
+    left: 0;
+    right: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .emptyContent {
+    padding: 40px 0;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+  }
+  
+  .loadingMore {
+    padding: 15px 0;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+  }
+  
+  .item {
+    position: relative;
+    
+    &:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+      height: 1px;
+      background-color: #eee;
+      transform: scaleY(0.5);
+    }
+  }
+  
+  

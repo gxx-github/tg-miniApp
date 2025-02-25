@@ -1,21 +1,15 @@
 import EventBus from "@/utils/eventBus";
 import './index.scss'
 import { useEffect, useState } from "react";
-import starIcon from '@/assets/h-star.png'
-import checkIcon from '@/assets/h-right.png'
-import friendsIcon from '@/assets/h-friends.png'
-import gameIcon from '@/assets/game.png'
-import taskIcon from '@/assets/task.png'
-import walletIcon from '@/assets/wallet.png'
 import { Button, Swiper, Toast } from "antd-mobile";
-import { judgeIsCheckIn } from '@/utils/common'
 import { useDispatch, useSelector } from "react-redux";
-import { getUserInfoReq, userCheckReq, bindWalletReq } from "@/api/common";
 import { initUtils } from '@telegram-apps/sdk-react';
 import { setUserInfoAction } from "@/redux/slices/userSlice";
-import LogoIcon from '@/assets/logo.jpg'
 import { TonConnectButton, useTonConnectModal, useTonWallet } from "@tonconnect/ui-react";
 import { useNavigate } from "react-router-dom";
+import banner1 from '../../assets/home/banner@2x.png'
+import ScrollList from "../ScrollList";
+import ShopCard from "../Card/shopCard";
 
 export default function () {
   const userInfo = useSelector((state: any) => state.user.info);
@@ -24,59 +18,155 @@ export default function () {
   </main>
 }
 
+interface ListItem {
+  level: "S" | "A" | "B" | "C"
+  imageUrl: string
+  title: string
+  description: string
+  progress: number // 0-100
+  className?: string
+  id:number
+}
+
+const shopItems = [
+  {
+    id: 1,
+    level: "S" as const,
+    imageUrl: "/placeholder.svg?height=200&width=200",
+    title: "限定款手办模型",
+    description: "精致手工制作，限量发售，独特编号收藏价值高",
+    progress: 85,
+  },
+  {
+    id: 2,
+    level: "A" as const,
+    imageUrl: "/placeholder.svg?height=200&width=200",
+    title: "主题徽章套装",
+    description: "原创设计，高品质材质，多款可选",
+    progress: 60,
+  },
+  {
+    id: 3,
+    level: "B" as const,
+    imageUrl: "/placeholder.svg?height=200&width=200",
+    title: "动漫周边T恤",
+    description: "舒适面料，时尚印花，多色可选",
+    progress: 45,
+  },
+  {
+    id: 4,
+    level: "C" as const,
+    imageUrl: "/placeholder.svg?height=200&width=200",
+    title: "主题明信片",
+    description: "精美印刷，特种纸张，收藏馈赠两相宜",
+    progress: 30,
+  },
+]
+
 function Home({ userInfo }: { userInfo: any }) {
-  const eventBus = EventBus.getInstance()
-  const utils = initUtils();
-  const [loading, setLoading] = useState(false)
-  const wallet = useTonWallet()
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const handleToScore = async () => {
-    eventBus.emit('updateStep', 2)
+  const [list, setList] = useState<ListItem[]>(shopItems)
+  const [hasMore, setHasMore] = useState(true)
+  const [page, setPage] = useState(1)
+
+  // 模拟获取数据
+  const fetchData = async (pageNum: number): Promise<ListItem[]> => {
+    return new Promise((resolve) => {
+      // setTimeout(() => {
+      //   const newData = Array.from({ length: 10 }, (_, i) => ({
+      //     id: pageNum * 10 + i,
+      //     title: `标题 ${pageNum * 10 + i}`,
+      //     content: `这是第 ${pageNum * 10 + i} 条内容`,
+      //   }))
+      //   resolve(newData)
+      // }, 1000)
+    })
+  }
+  const handleRefresh = async () => {
+    const newData = await fetchData(1)
+    setList(newData)
+    setPage(1)
+    setHasMore(true)
+  }
+
+  const handleLoadMore = async () => {
+    const nextPage = page + 1
+    const newData = await fetchData(nextPage)
+
+    if (newData.length < 10) {
+      setHasMore(false)
+    }
+
+    setList((prev) => [...prev, ...newData])
+    setPage(nextPage)
   }
 
 
-  const handlePlayGame = () => {
-    if (userInfo?.playGameTimes > 0) {
-      navigate('/emjoyGame')
-    } else {
-      Toast.show({
-        content: 'The number of times today has been used up',
-        duration: 3000,
-      })
-    }
+  const renderItem = (item: ListItem,index:number) => {
+    return (
+      <ShopCard
+      key={index}
+      level={item.level}
+      imageUrl={item.imageUrl}
+      title={item.title}
+      description={item.description}
+      progress={item.progress}
+    />
+    )
   }
-  useEffect(() => {
-    //连接钱包与否
-    if (wallet?.account) {
-      dispatch(setUserInfoAction('2'))
-    
-    }
-  }, [wallet])
   return <div className="home fadeIn">
-    <div className="wrapper">
-      <Swiper autoplay loop>
-        <Swiper.Item key={1}>
-          <div className="community">
-            <div className="Hamsters-com">Hamster COMMUNITY</div>
-            <div className="home-tg">Home for Telegram OGs</div>
-            <div className="join-btn" onClick={() => {
-              utils.openTelegramLink('https://t.me/hamstermemedapp')
-            }}>Join 💰</div>
-            <div className="heart">💖</div>
-          </div>
-        </Swiper.Item>
-        <Swiper.Item key={2}>
-          <div className="community">
-            <div className="Hamsters-com">FOLOW US ON X.COM</div>
-            <div className="home-tg">stay updated with the latest news</div>
-            <div className="join-btn" onClick={() => {
-              window.open('https://x.com/Hamster_meme_')
-            }}>Follow 🐹</div>
-            <div className="heart">💥</div>
-          </div>
-        </Swiper.Item>
-      </Swiper>
+    <div className="contentDom">
+      <div className="banner">
+        <Swiper autoplay loop>
+          <Swiper.Item key={1}>
+            <div className="community">
+              <img src={banner1} alt="" className="bgImg" />
+            </div>
+          </Swiper.Item>
+          <Swiper.Item key={2}>
+            <div className="community">
+              <img src={banner1} alt="" className="bgImg" />
+            </div>
+          </Swiper.Item>
+        </Swiper>
+      </div>
+      <div className="showTop">
+        <div className="TopContainer">
+
+        
+        <div className="itemDom">
+          <div className="text">Total Draw
+            Amount ($)</div>
+          <div className="value">10,000</div>
+        </div>
+        <div className="itemDom">
+          <div className="text">Total
+            Participants</div>
+          <div className="value">10,000</div>
+        </div>
+        <div className="itemDom">
+          <div className="text">Total<br />
+            Draws</div>
+          <div className="value">10,000</div>
+        </div>
+        </div>
+      </div>
+      <div className="textShow">
+        <span className="text">Recommended for You</span>
+        <span className="all">
+          View All
+          <div className="icon"></div>
+        </span>
+      </div>
+    </div>
+
+    <div className="scrollContainer">
+      <ScrollList
+        data={list}
+        renderItem={renderItem}
+        onRefresh={handleRefresh}
+        onLoadMore={handleLoadMore}
+        hasMore={hasMore}
+      />
     </div>
   </div>
 }

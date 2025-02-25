@@ -31,9 +31,6 @@ export const IndexPage: FC = () => {
     }
     eventBus.addListener('updateStep', onMessage)
   }, [])
-  console.log('====================================');
-  console.log(step, 'step');
-  console.log('====================================');
   return (
     <div>
       {/* {

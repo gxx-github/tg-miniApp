@@ -10,6 +10,25 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'Montserrat-Light';
+  src: url('./assets/font/Montserrat-Light.otf') format('otf');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-Medium';
+  src: url('./assets/font/Montserrat-Medium.otf') format('otf');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Montserrat-SemiBold';
+  src: url('./assets/font/Montserrat-SemiBold.otf') format('otf');
+  font-weight: 600;
+  font-style: normal;
+}
+
 
 html, body, #root {
   height: 100%;
@@ -116,6 +135,10 @@ html {
   .content {
     flex: 1;
     overflow: auto;
+    >div{
+      width: 100%;
+      height: 100%;
+    }
   }
   .footer {
     height: fit-content;
