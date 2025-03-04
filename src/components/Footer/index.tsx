@@ -36,7 +36,7 @@ export default function () {
             title: 'Profile',
             icon: Profile,
             activeIcon:Profile_active,
-            to: '/frens'
+            to: '/profile'
         },
      
     ])

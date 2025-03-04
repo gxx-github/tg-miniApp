@@ -7,6 +7,7 @@ import FrensPage from '@/pages/Frens';
 import GamePage from '@/pages/Game';
 import DonwGamePage from '@/pages/DonwGame';
 import DetailPage from '@/pages/Detail';
+import ProfilePage from '@/pages/Profile';
 
 interface Route {
   path: string;
@@ -22,10 +23,10 @@ function Tab() {
 export const routes: Route[] = [
   { path: '/', Component: IndexPage },
   { path: '/joindraw', Component: JoinDrawPage },
+  { path: '/profile', Component: ProfilePage },
 
   { path: '/emjoyGame', Component: EmjoyGamePage },
   { path: '/downGame', Component: DonwGamePage },
-  { path: '/frens', Component: FrensPage },
   { path: '/game', Component: GamePage },
   { path: '/detail', Component: DetailPage },
 ];
