@@ -4,7 +4,7 @@ import type React from "react"
 import { useState } from "react"
 import ScrollList from "../../components/ScrollList"
 import "./index.scss"
-import ShopCard from "@/components/Card/shopCard"
+import ListCard from "@/components/Card/listCard"
 
 // 活动状态类型
 type ActivityStatus = "Ongoing" | "Not Started" | "Pending Draw" | "Draw Completed" | "Not Reached"
@@ -40,6 +40,7 @@ const JoinDrawPage: React.FC = () => {
   const tabs: ActivityStatus[] = ["Ongoing", "Not Started", "Pending Draw", "Draw Completed", "Not Reached"]
   // 状态管理
   const [activeTab, setActiveTab] = useState<ActivityStatus>("Ongoing")
+  const [activeListNum, setactiveListNum] = useState(0)
   const [sortType, setSortType] = useState<SortType>("Default")
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc")
   const [page, setPage] = useState(1)
@@ -47,8 +48,9 @@ const JoinDrawPage: React.FC = () => {
   const [list, setList] = useState<ActivityItem[]>([])
   const [sortOptionsTab, setsortOptionsTab] = useState(sortOptions1)
   // 处理Tab切换
-  const handleTabChange = (tab: ActivityStatus) => {
+  const handleTabChange = (tab: ActivityStatus,index:number) => {
     setActiveTab(tab)
+    setactiveListNum(index)
     setList([])
     setPage(1)
     setHasMore(true)
@@ -142,12 +144,13 @@ const JoinDrawPage: React.FC = () => {
   // 渲染列表项
   const renderItem = (item: ActivityItem) => {
     return (
-      <ShopCard
+      <ListCard
         level={item.level}
         imageUrl={item.imageUrl}
         title={item.title}
         description={item.description}
         progress={item.progress}
+        activeListNum={activeListNum}
       />
     )
   }
@@ -156,11 +159,11 @@ const JoinDrawPage: React.FC = () => {
     <div className="activity-list-page">
       {/* 状态标签栏 */}
       <div className="tab-bar">
-        {tabs.map((tab) => (
+        {tabs.map((tab,index) => (
           <div
             key={tab}
             className={`tab-item ${activeTab === tab ? "active" : ""}`}
-            onClick={() => handleTabChange(tab)}
+            onClick={() => handleTabChange(tab,index)}
           >
             {tab}
           </div>
@@ -188,8 +191,9 @@ const JoinDrawPage: React.FC = () => {
           renderItem={renderItem}
           onRefresh={handleRefresh}
           onLoadMore={handleLoadMore}
-          hasMore={hasMore}
+          hasMore={false}
           emptyText={`暂无${activeTab}的活动`}
+          className={''}
         />
       </div>
     </div>

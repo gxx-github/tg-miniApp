@@ -3,6 +3,9 @@
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     position: relative;
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
   
   .pullDownContent {
