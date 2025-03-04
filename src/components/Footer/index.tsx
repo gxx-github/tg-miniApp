@@ -27,13 +27,13 @@ export default function () {
             to: '/'
         },
         {
-            title: 'Leaderboard',
+            title: 'Join Draw',
             icon: Draw,
             activeIcon:Draw_active,
-            to: '/leaderBoard',
+            to: '/joindraw',
         },
         {
-            title: 'Friends',
+            title: 'Profile',
             icon: Profile,
             activeIcon:Profile_active,
             to: '/frens'

@@ -2,7 +2,7 @@ import type { ComponentType, JSX } from 'react';
 
 import IndexPage from '@/pages/Index';
 import EmjoyGamePage from '@/pages/EmjoyGame';
-import LeaderBoardPage from '@/pages/LeaderBoard';
+import JoinDrawPage from '@/pages/JoinDraw';
 import FrensPage from '@/pages/Frens';
 import GamePage from '@/pages/Game';
 import DonwGamePage from '@/pages/DonwGame';
@@ -21,9 +21,10 @@ function Tab() {
 
 export const routes: Route[] = [
   { path: '/', Component: IndexPage },
+  { path: '/joindraw', Component: JoinDrawPage },
+
   { path: '/emjoyGame', Component: EmjoyGamePage },
   { path: '/downGame', Component: DonwGamePage },
-  { path: '/leaderBoard', Component: LeaderBoardPage },
   { path: '/frens', Component: FrensPage },
   { path: '/game', Component: GamePage },
   { path: '/detail', Component: DetailPage },
