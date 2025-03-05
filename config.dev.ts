@@ -23,7 +23,7 @@ export default defineConfig({
     basicSsl(),
   ],
   build: {
-    outDir: 'docs'
+    outDir: 'build'
   },
   server: {
     proxy: {

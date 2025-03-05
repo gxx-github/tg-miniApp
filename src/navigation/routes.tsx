@@ -1,12 +1,7 @@
 import type { ComponentType, JSX } from 'react';
 
 import IndexPage from '@/pages/Index';
-import EmjoyGamePage from '@/pages/EmjoyGame';
 import JoinDrawPage from '@/pages/JoinDraw';
-import FrensPage from '@/pages/Frens';
-import GamePage from '@/pages/Game';
-import DonwGamePage from '@/pages/DonwGame';
-import DetailPage from '@/pages/Detail';
 import ProfilePage from '@/pages/Profile';
 
 interface Route {
@@ -25,8 +20,5 @@ export const routes: Route[] = [
   { path: '/joindraw', Component: JoinDrawPage },
   { path: '/profile', Component: ProfilePage },
 
-  { path: '/emjoyGame', Component: EmjoyGamePage },
-  { path: '/downGame', Component: DonwGamePage },
-  { path: '/game', Component: GamePage },
-  { path: '/detail', Component: DetailPage },
+
 ];

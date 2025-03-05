@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://github.com/gxx-github/tg-miniApp",
   "scripts": {
     "dev": "vite --host --force --config config.dev.ts",
     "build": "tsc && set GH_PAGES=false && vite build --config config.prod.ts",
@@ -11,7 +12,9 @@
     "delete": "rmdir /s /q ..\\telegram-mini\\assets",
     "move": "xcopy .\\docs ..\\telegram-mini /s /e /i /Y",
     "execBat": "cd ..\\ && cd telegram-mini && auto_commit.bat",
-    "build:git": "tsc && set GH_PAGES=true && vite build --config config.prod.ts && npm run delete && npm run move && npm run execBat"
+    "build:git": "tsc && set GH_PAGES=true && vite build --config config.prod.ts && npm run delete && npm run move && npm run execBat",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.6",

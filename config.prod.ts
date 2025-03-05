@@ -41,7 +41,7 @@ export default defineConfig({
     phaserMsg(),
   ],
   build: {
-    outDir: 'docs',
+    outDir: 'build',
     rollupOptions: {
       output: {
         manualChunks: {
