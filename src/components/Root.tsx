@@ -42,7 +42,7 @@ const Inner: FC = () => {
 
   return (
     <TonConnectUIProvider
-      manifestUrl={manifestUrl}
+      manifestUrl={'https://gxx-github.github.io/tg-miniApp/tonconnect-manifest.json'}
       actionsConfiguration={{
         twaReturnUrl: 'https://t.me/test_stittch_bot',
         returnStrategy: "back",

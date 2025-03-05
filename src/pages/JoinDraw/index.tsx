@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ScrollList from "../../components/ScrollList"
 import "./index.scss"
 import ListCard from "@/components/Card/listCard"
@@ -154,6 +154,15 @@ const JoinDrawPage: React.FC = () => {
       />
     )
   }
+
+  useEffect(() => {
+    handleRefresh()
+  
+    return () => {
+      
+    }
+  }, [])
+  
 
   return (
     <div className="activity-list-page">

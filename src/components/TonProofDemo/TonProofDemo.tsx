@@ -22,6 +22,9 @@ export const TonProofDemo = () => {
 		}
 
 		const payload = await TonProofDemoApi.generatePayload();
+		console.log('====================================');
+		console.log(payload,'payload');
+		console.log('====================================');
 
 		if (payload) {
 			tonConnectUI.setConnectRequestParameters({ state: 'ready', value: payload });

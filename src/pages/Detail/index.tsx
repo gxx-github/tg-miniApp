@@ -1,120 +1,99 @@
-import { InfiniteScroll, List } from 'antd-mobile'
+import { InfiniteScroll, List, Stepper } from 'antd-mobile'
 import './index.scss'
 import { useEffect, useState } from 'react'
-import { getMyScoreHistoryReq, getSubUserListReq } from '@/api/common'
 import { useLocation } from 'react-router-dom'
-import { stringToColor } from '@/utils/common'
 import moment from 'moment'
-import BackTop from '@/components/BackTop'
+import { Swiper } from "antd-mobile";
 
 function FrensDetailPage() {
-  const [list, setList] = useState<any>([])
-  const [hasMore, setHasMore] = useState(true)
-  const [page, setPage] = useState(1)
-  const [total, setTotal] = useState(0)
   const myLocation = useLocation()
-  const [isMyself, setIsMyself] = useState(false)
-
-  const getList = async (mySelf: boolean) => {
-    let res: any
-    if (mySelf) {
-      res = await getMyScoreHistoryReq({ page })
-    } else {
-      res = await getSubUserListReq({ page })
-    }
-    setPage((page => page + 1))
-    return res.data.rows
-  }
-  const getType = (type: string) => {
-    if (type == 'register') {
-      type = 'Inviting'
-    }
-    if (type == 'sign') {
-      type = 'Checking In'
-    }
-    if (type == 'play_game_reward_parent') {
-      type = 'Drop Game'
-    }
-    if (type == 'play_game_reward') {
-      type = 'Drop Game'
-    }
-    if (type == 'harvest_farming') {
-      type = 'Farming'
-    }
-    if (type == 'share_playGame') {
-      type = 'Share Game'
-    }
-    return type
-  }
-  async function loadMore() {
-    const search = myLocation.search
-    let isMyself = false
-    if (search) {
-      if (search.includes('myself')) {
-        isMyself = true
-      }
-    }
 
 
-    const append = await getList(isMyself)
-    if (page == 1) {
-      if (append.length < 20) {
-        setHasMore(false)
-      }
-      setList(append)
-    } else {
-      setList((val: any) => [...val, ...append])
-      setHasMore(append.length > 0)
-    }
-  }
   useEffect(() => {
-    const search = myLocation.search
-    if (search) {
-      const _total = search.replace('?total=', '') as any
-      if (_total) {
-        setTotal(_total)
-      }
-      if (search.includes('myself')) {
-        setIsMyself(true)
-      } else {
-        setIsMyself(false)
-      }
-    }
+    console.log('====================================');
+    console.log(myLocation, 'myLocation');
+    console.log('====================================');
+
 
   }, [])
 
-  return <div className="frens-detail-page">
-    <div className="frens-title">
-      {
-        isMyself ? <span>My Scores</span> : <span>{total}&nbsp;frens</span>
-      }
+  return <div className="goodDetails">
+    {/* 轮播展示 */}
+    <div className="bannerDom">
+      <Swiper autoplay loop>
+        <Swiper.Item key={1}>
+          <div className="imgDom">
+            1
+          </div>
+        </Swiper.Item>
+        <Swiper.Item key={2}>
+          <div className="imgDom">
+            2
+          </div>
+        </Swiper.Item>
+      </Swiper>
     </div>
-    <List>
-      {
-        list.map((item: any, index: number) => {
-          return <List.Item key={index}>
-            <div className='frens-list'>
-              <div className='frens-detail-left'>
-                <div className='score'>+&nbsp;{item.score.toLocaleString()}</div>
-                <div className='frens-detail-time'>{moment(item.createdAt).format('YYYY-MM-DD HH:mm')}</div>
-              </div>
-              <div className='frens-detail-right'>
-                <div className='by-user'>
-                  by<div className="user-icon" style={{ background: stringToColor(item.from_username) }}>
-                    {item.from_username.slice(0, 2)}
-                  </div>
-                  <div className='frens-detail-name'>{item.from_username}</div>
+    {/* 不同状态显示按钮 */}
+    <div className="buttonContainer">
+      <div className="button1">Time Remaining: 23:59:59</div>
+    </div>
+    {/* 商品展示信息 */}
+    <div className="goodsInfo">
+      <div className="goodsTit">
+        Apple iphone 16 Pro Max 512G
+      </div>
+      <div className="roundNum">
+        <div className="text">Round Number: 2025136</div>
+        <div className="label-drop">Drop mode</div>
+      </div>
+      <div className="price">
+        1 USDT /
+        <span className="pricetext">Entries</span>
+      </div>
+      {/* 进度条 */}
+      <div className="progress-wrapper">
+        <div className="progress-bar">
+          <div className="progress-fill" style={{ width: `50%` }} >
+            <span>{50}%</span>
+          </div>
+        </div>
 
-                </div>
-                <div className='type'>{getType(item.type)}</div>
-              </div>
-            </div>
-          </List.Item>
-        })
-      }
-    </List>
-    <InfiniteScroll loadMore={loadMore} hasMore={hasMore} />
-    <BackTop scrollName={'content'} />
+      </div>
+      {/* 进度展示 */}
+      <div className="progress-show">
+        <div className="showitem">
+          <div className="num">1</div>
+          <div className="text">Entries <br />Joined</div>
+        </div>
+        <div className="showitem">
+          <div className="num">1</div>
+          <div className="text">Total Entries <br />Required</div>
+        </div>
+        <div className="showitem">
+          <div className="num">1</div>
+          <div className="text">Qualified <br />Entries</div>
+        </div>
+        <div className="showitem">
+          <div className="num">1</div>
+          <div className="text">Entries <br />Remaining</div>
+        </div>
+      </div>
+      {/* 进行时购买按钮 */}
+      <div className="onlineCon">
+        <div className="stepCon">
+          <div className="text">Join Now</div>
+          <Stepper min={-5} max={5} />
+        </div>
+        <div className="buyButton">
+          Buy 1 USDT
+        </div>
+      </div>
+    </div>
+    {/* 参与信息 */}
+    <div className="partCon">
+      
+    </div>
+    {/* 权益展示 */}
 
   </div>
 }

@@ -24,6 +24,7 @@ import Footer from './Footer';
 import { useDispatch } from 'react-redux';
 import { loginReq } from '@/api/common';
 import { setUserInfoAction } from '@/redux/slices/userSlice';
+import { TonProofDemo } from './TonProofDemo/TonProofDemo';
 
 export const App: FC = () => {
   const lp = useLaunchParams();

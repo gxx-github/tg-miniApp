@@ -3,6 +3,7 @@ import type { ComponentType, JSX } from 'react';
 import IndexPage from '@/pages/Index';
 import JoinDrawPage from '@/pages/JoinDraw';
 import ProfilePage from '@/pages/Profile';
+import DetailPage from '@/pages/Detail';
 
 interface Route {
   path: string;
@@ -19,6 +20,7 @@ export const routes: Route[] = [
   { path: '/', Component: IndexPage },
   { path: '/joindraw', Component: JoinDrawPage },
   { path: '/profile', Component: ProfilePage },
+  { path: `/detail/:id`, Component: DetailPage },
 
 
 ];
