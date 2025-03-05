@@ -29,6 +29,7 @@ const phaserMsg = () => {
 // https://vitejs.dev/config/
 
 export default defineConfig({
+  base: './',
   plugins: [
     // https://npmjs.com/package/@vitejs/plugin-react-swc
     react(),
