@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/gxx-github/tg-miniApp",
+  "homepage": "https://gxx-github.github.io/tg-miniApp",
   "scripts": {
     "dev": "vite --host --force --config config.dev.ts",
     "build": "tsc && set GH_PAGES=false && vite build --config config.prod.ts",
