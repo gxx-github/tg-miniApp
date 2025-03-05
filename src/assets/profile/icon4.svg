@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="19.2px" height="19.2px" viewBox="0 0 19.2 19.2" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>关于@2x</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="22" height="22"></rect>
+    </defs>
+    <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="个人中心" transform="translate(-15.4, -508.4)">
+            <g id="关于" transform="translate(14, 507)">
+                <mask id="mask-2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <g id="蒙版"></g>
+                <g mask="url(#mask-2)" id="路径">
+                    <g transform="translate(2, 2)">
+                        <path d="M9,18 C11.48526,18 13.73526,16.99263 15.363945,15.363945 C16.99263,13.73526 18,11.48526 18,9 C18,6.51474 16.99263,4.26474 15.363945,2.636037 C13.73526,1.007361 11.48526,0 9,0 C6.51474,0 4.26474,1.007361 2.636037,2.636037 C1.007361,4.26474 0,6.51474 0,9 C0,11.48526 1.007361,13.73526 2.636037,15.363945 C4.26474,16.99263 6.51474,18 9,18 Z" stroke="#000000" stroke-width="1.2" fill="none" stroke-linejoin="round"></path>
+                        <path d="M8.93382353,14.7176471 C9.51859059,14.7176471 9.99264706,14.2435906 9.99264706,13.6588235 C9.99264706,13.0740565 9.51859059,12.6 8.93382353,12.6 C8.34905647,12.6 7.875,13.0740565 7.875,13.6588235 C7.875,14.2435906 8.34905647,14.7176471 8.93382353,14.7176471 Z" stroke="none" fill="#000000" fill-rule="evenodd"></path>
+                        <line x1="9" y1="3.6" x2="9" y2="10.8" stroke="#000000" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round"></line>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

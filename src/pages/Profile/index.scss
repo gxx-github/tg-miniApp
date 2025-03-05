@@ -1,0 +1,93 @@
+.profileCon {
+    width: 100%;
+}
+
+.walletCon {
+    height: 200px;
+    margin-bottom: 12px;
+    padding: 24px 14px 0 14px;
+    background: linear-gradient(180deg, #FFFFFF 0%, #03DA9F 100%);
+}
+
+.userInfoDom {
+    display: flex;
+    margin-bottom: 32px;
+
+    .imgDom {
+        width: 68px;
+        height: 68px;
+        margin-right: 12px;
+
+        img {
+            width: 68px;
+            height: 68px;
+        }
+    }
+
+    .account {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        font-size: 14px;
+        color: #000000;
+        margin-bottom: 12px;
+    }
+
+    .address {
+        font-family: Montserrat-Light;
+        font-weight: 300;
+        font-size: 12px;
+        color: #333333;
+    }
+}
+
+.connect-btn {
+    margin: 0 auto;
+}
+
+.serviceDom {
+    background: #FFFFFF;
+    padding: 24px 14px 24px 14px;
+
+    .tit {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        font-size: 15px;
+        color: #333333;
+        margin-bottom: 24px;
+    }
+
+    .itemDom {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 22px;
+&:last-child{
+    margin: 0;
+}
+        .left {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            width: 22px;
+            height: 22px;
+            margin-right: 12px;
+        }
+
+        .text {
+            font-family: Montserrat-Light;
+            font-weight: 300;
+            font-size: 14px;
+            color: #333333;
+            line-height: 14px;
+        }
+
+        .right {
+            width: 10px;
+            height: 10px;
+        }
+    }
+
+}

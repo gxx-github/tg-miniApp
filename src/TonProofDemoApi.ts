@@ -4,7 +4,8 @@ import './patch-local-storage-for-github-pages';
 class TonProofDemoApiService {
 	private localStorageKey = 'demo-api-access-token';
 
-	private host = 'https://demo.tonconnect.dev';
+	// private host = 'https://demo.tonconnect.dev';
+	private host = document.baseURI.replace(/\/$/, '');
 
 	public accessToken: string | null = null;
 

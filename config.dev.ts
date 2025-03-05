@@ -37,6 +37,7 @@ export default defineConfig({
     fs: {
       allow: ['../sdk', './'],
     },
+    port:3000
   },
   resolve: {
     alias: {

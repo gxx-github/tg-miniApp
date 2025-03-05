@@ -1,5 +1,7 @@
 {
-  "url": "https://claim.forkfrenpet.com",
-  "name": "Hamster",
-  "iconUrl": "https://static.forkfrenpet.com/logo.jpg"
+  "url": "https://347e-219-141-182-229.ngrok-free.app",
+  "name": "tg-mini-testBot",
+  "iconUrl": "https://347e-219-141-182-229.ngrok-free.app/icon.png",
+  "termsOfUseUrl": "https://347e-219-141-182-229.ngrok-free.app/terms-of-use.txt",
+  "privacyPolicyUrl": "https://347e-219-141-182-229.ngrok-free.app/privacy-policy.txt"
 }
