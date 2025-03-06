@@ -14,9 +14,10 @@ interface ShopCardProps {
     className?: string
     handleDraw?: (e: any) => void
     handleClaim?: (e: any) => void
+    handleClick: (e:any) => void
 }
 
-const listCard: React.FC<ShopCardProps> = ({ level, imageUrl, title, description, progress, className = "", handleDraw, handleClaim, activeListNum }) => {
+const listCard: React.FC<ShopCardProps> = ({ level, imageUrl, title, description, progress, className = "", handleDraw, handleClaim, activeListNum,handleClick }) => {
     // 确保进度值在 0-100 之间
     const normalizedProgress = Math.min(100, Math.max(0, progress))
 
@@ -33,7 +34,9 @@ const listCard: React.FC<ShopCardProps> = ({ level, imageUrl, title, description
     }
 
     return (
-        <div className={`list-card ${className}`}>
+        <div className={`list-card ${className}`} onClick={()=>{
+            handleClick(1)
+        }}>
             {/* 商品等级标签 */}
             <div className={`level-tag ${getLevelClassName()}`}>
                 <img src={getLevelClassName()} alt="" />

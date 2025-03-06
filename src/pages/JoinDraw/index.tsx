@@ -5,6 +5,7 @@ import { useEffect, useState } from "react"
 import ScrollList from "../../components/ScrollList"
 import "./index.scss"
 import ListCard from "@/components/Card/listCard"
+import { useNavigate } from "react-router-dom"
 
 // 活动状态类型
 type ActivityStatus = "Ongoing" | "Not Started" | "Pending Draw" | "Draw Completed" | "Not Reached"
@@ -30,6 +31,8 @@ interface ActivityItem {
 }
 
 const JoinDrawPage: React.FC = () => {
+  const navigate = useNavigate()
+  
   // 排序选项
   const sortOptions1: SortType[] = ["Default", "Entries Remaining", "Price", "Participation Progress", "End Time"]
   const sortOptions2: SortType[] = ["Default", "Total Entries Required", "Price", "Start Time"]
@@ -140,6 +143,9 @@ const JoinDrawPage: React.FC = () => {
     setList((prev) => [...prev, ...newData])
     setPage(nextPage)
   }
+  const jumpToDetail = (id:number)=>{
+    navigate(`/detail/${id}`) 
+  }
 
   // 渲染列表项
   const renderItem = (item: ActivityItem) => {
@@ -151,6 +157,7 @@ const JoinDrawPage: React.FC = () => {
         description={item.description}
         progress={item.progress}
         activeListNum={activeListNum}
+        handleClick={jumpToDetail}
       />
     )
   }

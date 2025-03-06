@@ -1,5 +1,7 @@
 .goodDetails {
   width: 100%;
+  height: fit-content !important;
+  padding-bottom: 30px;
 }
 
 .bannerDom {
@@ -38,6 +40,7 @@
   width: 100%;
   padding: 16px 14px 24px;
   background: #FFFFFF;
+  margin-bottom: 12px;
 
   .goodsTit {
     font-family: Montserrat-Medium;
@@ -54,7 +57,7 @@
 
     .text {
       font-family: Montserrat-Light;
-      font-weight: 300;
+      
       font-size: 12px;
       color: #000000;
       margin-right: 12px;
@@ -66,7 +69,7 @@
       border: 1px solid #03DA9F;
       font-family: Montserrat-Light;
       padding: 0px 6px;
-      font-weight: 300;
+      
       font-size: 12px;
       color: #00C891;
     }
@@ -125,7 +128,7 @@
     >div {
       flex: 1;
       font-family: Montserrat-Light;
-      font-weight: 300;
+      
 
       &:nth-child(1) {
         text-align: left;
@@ -160,7 +163,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-margin-bottom: 24px;
+      margin-bottom: 24px;
+
       .text {
         font-family: Montserrat-Medium;
         font-weight: 500;
@@ -168,22 +172,92 @@ margin-bottom: 24px;
         color: #000000;
       }
 
-     
+
     }
+
     .buyButton {
       font-family: Montserrat-Medium;
       font-weight: 500;
       font-size: 14px;
       color: #FFFFFF;
       height: 44px;
-background: #03DA9F;
-border-radius: 12px;
-display: flex;
-align-items: center;
-justify-content: center;
-cursor: pointer;
+      background: #03DA9F;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
 
     }
   }
 
 }
+
+.partCon {
+  width: 100%;
+  background: #fff;
+  padding: 24px 14px ;
+  margin-bottom: 12px;
+
+  .titText {
+    font-family: Montserrat-Medium;
+    font-weight: 500;
+    font-size: 15px;
+    color: #000000;
+    margin-bottom: 24px;
+  }
+
+  .partText {
+    display: flex;
+    justify-content: space-between;
+margin-bottom: 24px;
+&:last-child{
+  margin: 0;
+}
+    .partLabel {
+      font-family: Montserrat-Light;
+      
+      font-size: 13px;
+      color: #000000;
+    }
+
+    .partValue {
+      font-family: Montserrat-Medium;
+      font-weight: 500;
+      font-size: 13px;
+      color: #666660;
+      text-align: right;
+    }
+  }
+}
+.benefitDom{
+  width: 100%;
+  background: #fff;
+  padding: 24px 14px;
+  margin-bottom: 12px;
+  .benefitTit{
+    font-family: Montserrat-Medium;
+    font-weight: 500;
+    font-size: 15px;
+    color: #000000;
+    margin-bottom: 24px;
+  }
+  .benifitCon{
+    display: flex;
+    justify-content: space-between;
+    .benifitLabel{
+      font-family: Montserrat-Light;
+      
+      font-size: 13px;
+      color: #666666;
+    }
+    .rightIcon{
+      width: 10px;
+      height: 10px;
+      background: url(../../assets/detail/Enter.svg);
+      background-size: 100% 100%;
+      cursor: pointer;
+    }
+  }
+}
+

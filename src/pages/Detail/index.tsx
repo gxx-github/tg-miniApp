@@ -4,9 +4,11 @@ import { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import moment from 'moment'
 import { Swiper } from "antd-mobile";
+import DetailTab from '@/components/DetailTab'
 
 function FrensDetailPage() {
   const myLocation = useLocation()
+  const [currentTab, setcurrentTab] = useState(0)
 
 
   useEffect(() => {
@@ -91,10 +93,30 @@ function FrensDetailPage() {
     </div>
     {/* 参与信息 */}
     <div className="partCon">
-      
+      <div className="titText">My Participation</div>
+      <div className="partText">
+        <div className="partLabel">Entries Purchased</div>
+        <div className="partValue">0</div>
+      </div>
+      <div className="partText">
+        <div className="partLabel">Participation Asset</div>
+        <div className="partValue">0  USDT</div>
+      </div>
+      <div className="partText">
+        <div className="partLabel">Draw Number</div>
+        <div className="partValue">You Have Not Joined the <br /> Draw Yet</div>
+      </div>
     </div>
     {/* 权益展示 */}
-
+    <div className="benefitDom">
+      <div className="benefitTit">Benefits</div>
+      <div className="benifitCon">
+        <div className="benifitLabel">Winners Can Choose a Physical Prize or <br />Cryptocurrency</div>
+        <div className="rightIcon"></div>
+      </div>
+    </div>
+    {/* tab切换 */}
+    <DetailTab className='tabCon'currentTab={currentTab} setcurrentTab={setcurrentTab} ></DetailTab>
   </div>
 }
 

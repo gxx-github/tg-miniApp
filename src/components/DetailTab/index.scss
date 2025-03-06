@@ -1,0 +1,124 @@
+.tabCon {
+    width: 100%;
+    background: #fff;
+    padding: 24px 14px;
+
+}
+
+.tabListDom {
+    display: flex;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    align-items: center;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    .tabItem {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        font-size: 14px;
+        color: #000000;
+        white-space: nowrap;
+        margin-right: 32px;
+        position: relative;
+        height: 30px;
+
+        &.active {
+            color: #00C891;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 0px;
+                left: 50%;
+                width: 40px;
+                height: 4px;
+                background: #00C891;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
+
+.basicInfoDom {
+    .basicDiv {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 24px;
+        font-family: Montserrat-Light;
+        font-size: 13px;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        .label {
+            color: #000;
+        }
+
+        .value {
+            color: #666666;
+        }
+    }
+}
+
+.historyDom {
+    height: 528px;
+    display: flex;
+    flex-direction: column;
+
+    .historyTop {
+        height: 32px;
+        font-family: Montserrat-Light;
+        font-size: 13px;
+        color: #000000;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+
+        >div {
+            &:nth-child(1) {
+                width: 153px;
+            }
+
+            &:nth-child(3) {
+                width: 105px;
+                text-align: right;
+            }
+        }
+    }
+
+    .historyCon {
+        flex: 1;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .historyItem {
+            font-family: Montserrat-Light;
+            font-size: 13px;
+            color: #666;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #F7F7F7;
+            padding: 15px 0;
+
+            >div {
+                &:nth-child(1) {
+                    width: 153px;
+                }
+
+                &:nth-child(3) {
+                    width: 105px;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+.desDom {}
