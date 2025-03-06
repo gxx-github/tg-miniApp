@@ -5,12 +5,45 @@ import { useLocation } from 'react-router-dom'
 import moment from 'moment'
 import { Swiper } from "antd-mobile";
 import DetailTab from '@/components/DetailTab'
+import Icon1 from '../../assets/detail/isGet@2x.png'
+import Icon2 from '../../assets/detail/isNotGet@2x.png'
+import Icon3 from '../../assets/detail/isNotOpen@2x.png'
+import Icon4 from '../../assets/detail/isClaimed@2x.png'
 
 function FrensDetailPage() {
   const myLocation = useLocation()
   const [currentTab, setcurrentTab] = useState(0)
 
-
+  // 渲染显示项目 isJoin 是否达成 isGet 是否获得
+  const renderItem = (isJoin: boolean, isGet: boolean) => {
+    return (
+      isJoin ? <div className="joinDom">
+        {
+          isGet ? <div className="isGet">
+            <img src={Icon1} alt="" />
+            <div className="text">
+              <div className="tit">Congratulations, You Won!</div>
+              You can claim your prize in the <br/> Winning History.</div>
+          </div> : <div className="isNotGet">
+          <img src={Icon2} alt="" />
+          <div className="text">
+            <div className="tit">Unfortunately, No Win This Round!</div>
+          Keep participating and trying—luck will come your way!</div>
+          </div>
+        }
+      </div> : <div className="passDom">
+        {
+          isGet ? <div className="isGet">
+            <img src={Icon4} alt="" />
+            <div className="text">You have successfully retrieved your assets. More exciting prizes await you!</div>
+          </div> : <div className="isNotGet">
+            <img src={Icon3} alt="" />
+            <div className="text">Asset claims are not yet available for this round. Stay tuned!</div>
+          </div>
+        }
+      </div>
+    )
+  }
   useEffect(() => {
     console.log('====================================');
     console.log(myLocation, 'myLocation');
@@ -38,6 +71,7 @@ function FrensDetailPage() {
     {/* 不同状态显示按钮 */}
     <div className="buttonContainer">
       <div className="button1">Time Remaining: 23:59:59</div>
+      <div className="button2">Time Remaining: 23:59:59</div>
     </div>
     {/* 商品展示信息 */}
     <div className="goodsInfo">
@@ -90,7 +124,28 @@ function FrensDetailPage() {
           Buy 1 USDT
         </div>
       </div>
+      {/* 参与者相关显示 */}
+      <div className="partnerShowDom">
+        <div className="partnerInfo">
+          <div className="showItemInfo">
+            <div className="label">Achieved Amount</div>
+            <div className="value color1">$ 3,000</div>
+          </div>
+          <div className="showItemInfo">
+            <div className="label">Lucky Number</div>
+            <div className="value color2">100489</div>
+          </div>
+          <div className="showItemInfo">
+            <div className="label">Winning User</div>
+            <div className="value color3">UQAxTW…P4wk</div>
+          </div>
+        </div>
+        {
+          renderItem(false, true)
+        }
+      </div>
     </div>
+
     {/* 参与信息 */}
     <div className="partCon">
       <div className="titText">My Participation</div>
@@ -116,7 +171,7 @@ function FrensDetailPage() {
       </div>
     </div>
     {/* tab切换 */}
-    <DetailTab className='tabCon'currentTab={currentTab} setcurrentTab={setcurrentTab} ></DetailTab>
+    <DetailTab className='tabCon' currentTab={currentTab} setcurrentTab={setcurrentTab} ></DetailTab>
   </div>
 }
 
