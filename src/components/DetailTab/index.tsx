@@ -41,8 +41,14 @@ export const DetailTab: FC<TabProps> = ({ className, currentTab, setcurrentTab }
     async function loadMore() {
         //请求数据接口，处理页码增加
         const append = testData
-        sethistoryData(val => [...val, ...testData])
-        setHasMore(append.length > 0)
+        if (append.length > 0) {
+            setTimeout(() => {
+                sethistoryData(val => [...val, ...testData])
+
+                setHasMore(true)
+            }, 3000)
+        }
+
     }
     return (
         <div className={className}>
@@ -108,13 +114,13 @@ export const DetailTab: FC<TabProps> = ({ className, currentTab, setcurrentTab }
                         <div>Draw<br /> Number</div>
                     </div>
                     <div className="historyCon">
-                            {historyData.map((item, index) => (
-                                    <div className="historyItem">
-                                        <div>{item.address}</div>
-                                        <div>{item.entry}</div>
-                                        <div>{item.number.join(', ')}</div>
-                                    </div>
-                            ))}
+                        {historyData.map((item, index) => (
+                            <div className="historyItem">
+                                <div>{item.address}</div>
+                                <div>{item.entry}</div>
+                                <div>{item.number.join(', ')}</div>
+                            </div>
+                        ))}
                         <InfiniteScroll loadMore={loadMore} hasMore={hasMore} />
                     </div>
                 </div>

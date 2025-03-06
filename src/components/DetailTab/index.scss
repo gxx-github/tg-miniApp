@@ -121,4 +121,9 @@
     }
 }
 
-.desDom {}
+.desDom {
+    width: 100%;
+    height: fit-content;
+    min-height: 500px;
+    border: 1px solid red;
+}
