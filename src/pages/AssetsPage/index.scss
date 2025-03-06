@@ -1,0 +1,33 @@
+.container {
+    padding-bottom: 16px;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--tg-theme-text-color, #000000);
+  }
+  
+  .refreshButton {
+    background: none;
+    border: none;
+    color: var(--tg-theme-link-color, #2481cc);
+    font-size: 14px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+  
+  
