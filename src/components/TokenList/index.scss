@@ -1,0 +1,140 @@
+.tokenList {
+  width: 100%;
+  background: #F9F9F9;
+}
+
+.tokenItem {
+  display: flex;
+  align-items: center;
+  padding: 18px 14px;
+  background: #FFFFFF;
+  border-radius: 12px;
+
+  &:not(:last-child) {
+    margin-bottom: 12px;
+  }
+}
+
+.tokenLogo {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 12px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.defaultLogo {
+  width: 100%;
+  height: 100%;
+  background-color: var(--tg-theme-button-color, #0088cc);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.tokenInfo {
+  flex: 1;
+}
+
+.tokenName {
+  font-family: Montserrat-Medium;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000000;
+  margin-bottom: 13px;
+}
+
+.tokenSymbol {
+  font-family: Montserrat-Light;
+font-size: 13px;
+color: #666666;
+}
+
+.tokenBalance {
+  text-align: right;
+}
+
+.tokenAmount {
+  font-family: Montserrat-Medium;
+  font-weight: 500;
+  font-size: 16px;
+  color: #000000;
+  margin-bottom: 13px;
+
+}
+
+.tokenValue {
+  font-family: Montserrat-Light;
+  font-size: 13px;
+color: #666666;
+
+}
+
+.emptyState {
+  padding: 24px;
+  text-align: center;
+  color: var(--tg-theme-hint-color, #999999);
+}
+
+.skeletonToken {
+  display: flex;
+  align-items: center;
+  padding: 12px 0;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--tg-theme-hint-color, rgba(0, 0, 0, 0.1));
+  }
+}
+
+.skeletonLogo {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--tg-theme-hint-color, rgba(0, 0, 0, 0.1));
+  margin-right: 12px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeletonInfo {
+  flex: 1;
+}
+
+.skeletonName {
+  height: 16px;
+  width: 100px;
+  background-color: var(--tg-theme-hint-color, rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
+  margin-bottom: 8px;
+  animation: pulse 1.5s infinite;
+}
+
+.skeletonBalance {
+  height: 12px;
+  width: 60px;
+  background-color: var(--tg-theme-hint-color, rgba(0, 0, 0, 0.1));
+  border-radius: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
