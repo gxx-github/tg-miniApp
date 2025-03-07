@@ -1,6 +1,6 @@
 import { SDKProvider, useLaunchParams } from '@telegram-apps/sdk-react';
 import { TonConnectUIProvider } from '@tonconnect/ui-react';
-import { type FC, useEffect, useMemo } from 'react';
+import { type FC, useEffect, useMemo, useState } from 'react';
 import eruda from "eruda";
 
 import { App } from '@/components/App';
@@ -10,6 +10,7 @@ import store from '@/redux/store';
 import { ConfigProvider } from 'antd-mobile';
 import enUS from 'antd-mobile/es/locales/en-US'
 import { BrowserRouter } from 'react-router-dom';
+import SplashScreen from '@/pages/SplashScreen';
 
 const ErrorBoundaryError: FC<{ error: unknown }> = ({ error }) => (
   <div style={{ color: '#fff' }}>
@@ -27,11 +28,16 @@ const ErrorBoundaryError: FC<{ error: unknown }> = ({ error }) => (
 );
 
 const Inner: FC = () => {
+  const [showSplash, setShowSplash] = useState(true)
   const debug = useLaunchParams().startParam === 'debug';
   const manifestUrl = useMemo(() => {
     return new URL('tonconnect-manifest.json', window.location.href).toString();
   }, []);
   const currentUrl = typeof window !== "undefined" ? window.location.origin : ""
+    // 处理开屏页面完成
+    const handleSplashFinish = () => {
+      setShowSplash(false)
+    }
   // Enable debug mode to see all the methods sent and events received.
   useEffect(() => {
     if (debug) {
@@ -39,6 +45,7 @@ const Inner: FC = () => {
       eruda.init()
     }
   }, [debug]);
+
 
   return (
     <TonConnectUIProvider
@@ -65,7 +72,12 @@ const Inner: FC = () => {
         <Provider store={store}>
           <ConfigProvider locale={enUS}>
             <BrowserRouter>
-              <App />
+            {showSplash ? (
+            <SplashScreen onFinish={handleSplashFinish} duration={2500} appName="TON Assets" />
+          ) : (
+            <App />
+          )}
+              {/* <App /> */}
             </BrowserRouter>
           </ConfigProvider>
         </Provider>

@@ -12,82 +12,33 @@ export default function AssetsPage() {
     const [tokens, setTokens] = useState<any[]>([])
     const [activities, setActivities] = useState<any[]>([])
     const [isDataLoaded, setIsDataLoaded] = useState(false)
-    console.log(tonConnectUI, 'tonConnectUI');
-
-    //   const requestProof = async () => {
-    //     try {
-    //       // 定义要签名的数据
-    //       const payload = {
-    //         type: 'ton_proof',
-    //         items: [{
-    //           name: 'auth',
-    //           payload: `Sign in to My App at ${new Date().toISOString()}`
-    //         }]
-    //       };
-
-    //       // 请求签名
-    //       const result = await tonConnectUI.sendRequest(payload);
-
-    //       // 处理结果
-    //       console.log('Proof result:', result);
-
-    //     } catch (error) {
-    //       console.error('Proof request failed:', error);
-    //     }
-    //   };
-
 
     useEffect(() => {
-        // 获取钱包信息和资产
-        const loadWalletData = async () => {
-            const wallet: any = tonConnectUI.wallet
-            console.log(wallet, 'wallet');
-
-            if (wallet) {
-
-                const userAddress = wallet.account.address
-                setAddress(userAddress)
-
-                // 获取余额
-                const balanceNano = wallet.account.balance || "0"
-                const balanceTon = (Number(balanceNano) / 10 ** 9).toFixed(4)
-                setBalance(balanceTon)
-
-                // // 获取资产信息
-                // try {
-                //   setLoading(true, "获取资产信息...")
-                //   const assets = await fetchUserAssets(userAddress)
-
-                //   // 设置代币列表
-                //   if (assets.tokens) {
-                //     setTokens(assets.tokens)
-                //   }
-
-                //   // 设置活动列表
-                //   if (assets.activities) {
-                //     setActivities(assets.activities)
-                //   }
-
-                //   setIsDataLoaded(true)
-                // } catch (error) {
-                //   console.error("获取资产信息失败:", error)
-                // } finally {
-                //   setLoading(false)
-                // }
-            }
-        }
-
-        loadWalletData()
-
-        // 监听连接状态变化
-        const unsubscribe = tonConnectUI.onStatusChange(() => {
-            loadWalletData()
+        // 监听连接状态
+        const unsubscribe = tonConnectUI.onStatusChange((wallet) => {
+            console.log(wallet,'wallet');
+            
+          if (wallet) {
+            // 获取余额（以纳诺为单位）
+            // const balanceNano = wallet.account.balance || '0';
+            // console.log(balanceNano,'balanceNano');
+            
+            // // 转换为 TON 单位（1 TON = 10^9 纳诺）
+            // const balanceTon = (Number(balanceNano) / 10**9).toFixed(4);
+            
+            // setBalance(balanceTon);
+            // console.log('TON 余额:', balanceTon);
+          }else{
+            console.log(111111);
+            
+          }
         })
-
+        unsubscribe()
         return () => {
-            unsubscribe()
-        }
-    }, [tonConnectUI, setLoading])
+          unsubscribe();
+        };
+      }, [tonConnectUI]);
+
 
 
     return (
