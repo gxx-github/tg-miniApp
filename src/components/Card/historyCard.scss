@@ -1,0 +1,244 @@
+.entry-card {
+  background-color: white;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  padding: 14px 16px 24px;
+
+  .round-info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 16px;
+    font-size: 12px;
+    color: #000;
+    font-family: Montserrat-Light;
+    border-bottom: 1px solid #F7F7F7;
+
+    .status {
+      color: #666666;
+    }
+  }
+
+  .product-info {
+    display: flex;
+    padding-bottom: 14px;
+    padding-top: 13px;
+    justify-content: space-between;
+    border-bottom: 1px solid #F7F7F7;
+
+    .entry-type {
+      position: absolute;
+      top: 0;
+      left: 0;
+      font-size: 12px;
+      font-weight: 500;
+      color: white;
+      z-index: 1;
+      width: 45px;
+      height: 21px;
+      // background: linear-gradient( 90deg, #FF0066 0%, #FF0036 100%);
+      border-radius: 4px 0px 12px 0px;
+
+      &.normal {
+        background-color: #4cd4a1;
+      }
+
+      &.drop {
+        background-color: #ff5c7c;
+      }
+    }
+
+    .product-imageDom {
+      width: 110px;
+      height: 110px;
+      border-radius: 8px;
+      margin-right: 8px;
+      border: 1px solid red;
+      position: relative;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .product-details {
+      flex: 1;
+
+      .tit {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        font-size: 14px;
+        color: #000000;
+        line-height: 20px;
+      }
+
+      .round {
+        font-family: Montserrat-Light;
+        font-size: 12px;
+        color: #666666;
+        line-height: 12px;
+        margin: 10px 0;
+      }
+
+
+
+      .cost-entries {
+        font-family: Montserrat-Light;
+        font-size: 12px;
+        color: #FF0037;
+        line-height: 12px;
+
+      }
+    }
+  }
+
+  .participation-info {
+    padding-top: 23px;
+
+    .amount {
+      font-family: Montserrat-Light;
+      font-size: 13px;
+      color: #000000;
+      line-height: 13px;
+      margin-bottom: 16px;
+
+      .value {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        padding-left: 5px;
+
+      }
+    }
+
+    .time-remaining {
+      display: flex;
+      margin-bottom: 10px;
+      font-family: Montserrat-Light;
+      font-size: 13px;
+      color: #000000;
+      line-height: 13px;
+      margin-bottom: 16px;
+      align-items: center;
+
+      .timer {
+        padding-left: 6px;
+
+        .timerValue {
+          display: flex;
+          align-items: center;
+
+          .time {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(90deg, #FF0066 0%, #FF0036 100%);
+            border-radius: 4px;
+            text-align: center;
+            line-height: 20px;
+            color: #fff;
+            font-family: Montserrat-Medium;
+            font-weight: 500;
+            font-size: 13px;
+
+          }
+
+          .split {
+            margin: 0 6px;
+            display: inline-block;
+
+          }
+        }
+      }
+    }
+
+
+  }
+
+  .NotWon {
+    display: flex;
+    height: 56px;
+    background: rgba(234, 238, 242, .4);
+    border-radius: 12px;
+    padding: 0 12px;
+    align-items: center;
+    margin-bottom: 24px;
+
+    img {
+      width: 36px;
+      height: 36px;
+      margin-right: 8px;
+    }
+
+    .text {
+      font-family: Montserrat-Light;
+      font-size: 13px;
+      color: #666666;
+      line-height: 16px;
+    }
+  }
+  .WonDom {
+    display: flex;
+    height: 52px;
+    background: #FFF8F0;
+    border-radius: 12px;
+    padding: 0 12px;
+    align-items: center;
+    margin-bottom: 24px;
+
+    img {
+      width: 36px;
+      height: 36px;
+      margin-right: 8px;
+    }
+
+    .text {
+      font-family: Montserrat-Medium;
+      font-size: 13px;
+     color: #FF0037;
+      line-height: 16px;
+      font-weight: 500;
+    }
+  }
+
+  .action-buttons {
+    display: flex;
+
+    button {
+      height: 40px;
+      flex: 1;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Montserrat-Medium;
+      font-weight: 500;
+      font-size: 13px;
+
+      &.details-btn {
+        background-color: white;
+        border: 1px solid #ddd;
+        color: #333;
+
+        border: 1px solid #333333;
+      }
+      &.details-ship {
+        background-color: white;
+        border: 1px solid #ddd;
+        color: #333;
+        margin-right: 15px;
+
+        border: 1px solid #333333;
+      }
+
+      &.continue-btn {
+        margin-left: 15px;
+
+        background: #03DA9F;
+        color: white;
+      }
+    }
+  }
+}

@@ -26,6 +26,7 @@ export const getHours = (delta: number) => {
     return Math.floor((delta / (60 * 60)) % 24)
 }
 
+
 export const getAllHours = (delta: number) => {
     return Math.floor(delta / (60 * 60))
 }
@@ -42,6 +43,17 @@ export const toDeltaTimer = (delta: number) => {
     return formatTime(getDays(delta),getHours(delta), getMinues(delta), getSeconds(delta))
 }
 
+export const OngoingTimer = (delta: number) => {
+    return (
+      <div className='timerValue'>
+         <span className={'time'}>{getAllHours(delta)}</span>
+         <span className="split">:</span>
+         <span className={'time'}>{getMinues(delta)}</span>
+         <span className="split">:</span>
+         <span className={'time'}>{getSeconds(delta)}</span>
+      </div>
+    )
+  }
 
 
 
@@ -51,10 +63,12 @@ export const TimerDom = ({
     timer,
     onZero,
     shouwDay = false,
+    onGoing=false
 }: {
     timer: number
     onZero: () => void
     shouwDay?: boolean
+    onGoing?: boolean
 }) => {
     const [time, setTime] = useState(getDeltaTime(timer))
 
@@ -70,5 +84,8 @@ export const TimerDom = ({
         }
         // eslint-disable-next-line
     }, [time])
+    if(onGoing){
+        return <>{OngoingTimer(time)}</>
+    }
     return <span>{toDeltaTimer(time)}</span>
 }

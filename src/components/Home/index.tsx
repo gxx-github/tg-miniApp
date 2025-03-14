@@ -25,7 +25,7 @@ interface ListItem {
   description: string
   progress: number // 0-100
   className?: string
-  id:number
+  id: number
 }
 
 const shopItems = [
@@ -67,6 +67,7 @@ function Home({ userInfo }: { userInfo: any }) {
   const [list, setList] = useState<ListItem[]>(shopItems)
   const [hasMore, setHasMore] = useState(true)
   const [page, setPage] = useState(1)
+  const navigate = useNavigate()
 
   // 模拟获取数据
   const fetchData = async (pageNum: number): Promise<ListItem[]> => {
@@ -101,16 +102,16 @@ function Home({ userInfo }: { userInfo: any }) {
   }
 
 
-  const renderItem = (item: ListItem,index:number) => {
+  const renderItem = (item: ListItem, index: number) => {
     return (
       <ShopCard
-      key={index}
-      level={item.level}
-      imageUrl={item.imageUrl}
-      title={item.title}
-      description={item.description}
-      progress={item.progress}
-    />
+        key={index}
+        level={item.level}
+        imageUrl={item.imageUrl}
+        title={item.title}
+        description={item.description}
+        progress={item.progress}
+      />
     )
   }
   return <div className="home fadeIn">
@@ -132,27 +133,29 @@ function Home({ userInfo }: { userInfo: any }) {
       <div className="showTop">
         <div className="TopContainer">
 
-        
-        <div className="itemDom">
-          <div className="text">Total Draw
-            Amount ($)</div>
-          <div className="value">10,000</div>
-        </div>
-        <div className="itemDom">
-          <div className="text">Total
-            Participants</div>
-          <div className="value">10,000</div>
-        </div>
-        <div className="itemDom">
-          <div className="text">Total<br />
-            Draws</div>
-          <div className="value">10,000</div>
-        </div>
+
+          <div className="itemDom">
+            <div className="text">Total Draw
+              Amount ($)</div>
+            <div className="value">10,000</div>
+          </div>
+          <div className="itemDom">
+            <div className="text">Total
+              Participants</div>
+            <div className="value">10,000</div>
+          </div>
+          <div className="itemDom">
+            <div className="text">Total<br />
+              Draws</div>
+            <div className="value">10,000</div>
+          </div>
         </div>
       </div>
       <div className="textShow">
         <span className="text">Recommended for You</span>
-        <span className="all">
+        <span className="all" onClick={() => {
+          navigate('/joindraw')
+        }}>
           View All
           <div className="icon"></div>
         </span>

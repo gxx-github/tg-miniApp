@@ -1,0 +1,12 @@
+.winHistory{
+    display: flex;
+    flex-direction: column;
+}
+.winContainer{
+    padding: 12px 14px;
+    flex: 1;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}

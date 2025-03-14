@@ -1,0 +1,58 @@
+.tabContainer {
+    width: 100%;
+    overflow-x: auto;
+    background-color: #03DA9F;; // 绿色背景
+    // padding: 4px;
+    height: 52px;
+    
+    // 隐藏滚动条但保持功能
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  
+  .tabs {
+    display: flex;
+    position: relative;
+    min-width: min-content; // 确保所有标签都可见
+    height: 52px;
+
+  }
+  
+  .tab {
+    position: relative;
+    padding: 12px 24px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-family: Montserrat-Medium;
+    font-weight: 500;
+    cursor: pointer;
+    // 默认状态下没有圆角
+    border-radius: 0;
+    
+    &:hover {
+      opacity: 0.9;
+    }
+    
+    // 选中状态
+    &.selected {
+      background: #F9F9F9;
+      color: #000;
+      border-radius: 12px;
+      
+      // 确保选中的标签在最上层
+      z-index: 2;
+    }
+    
+    // 相邻标签的样式
+    // & + .tab {
+    //   margin-left: -8px; // 创建重叠效果
+    // }
+  }
+  
+  

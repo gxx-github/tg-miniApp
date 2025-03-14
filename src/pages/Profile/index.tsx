@@ -31,12 +31,12 @@ const ListItem = [
     {
         icon:icon2,
         text:'Draw History',
-        link:''
+        link:'/drawhistory'
     },
     {
         icon:icon3,
         text:'Winning History',
-        link:''
+        link:'/winhistory'
     },
     {
         icon:icon4,

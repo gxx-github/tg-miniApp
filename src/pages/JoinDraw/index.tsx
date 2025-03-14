@@ -6,9 +6,8 @@ import ScrollList from "../../components/ScrollList"
 import "./index.scss"
 import ListCard from "@/components/Card/listCard"
 import { useNavigate } from "react-router-dom"
+import CurvedTabs from "@/components/CurvedTabs"
 
-// 活动状态类型
-type ActivityStatus = "Ongoing" | "Not Started" | "Pending Draw" | "Draw Completed" | "Not Reached"
 
 // 排序类型
 type SortType = "Default" | "Entries Remaining" | "Price" | "Participation Progress" | "End Time" | 'Start Time' | 'Total Entries Required' | 'Participants' | 'Total Draw Amount' | 'Achieved Amount' | 'I Won' | "Pending Claim"| "Claimed"
@@ -27,7 +26,7 @@ interface ActivityItem {
   price: number
   remainingCount: number
   endTime: string
-  status: ActivityStatus
+  status: string
 }
 
 const JoinDrawPage: React.FC = () => {
@@ -40,9 +39,9 @@ const JoinDrawPage: React.FC = () => {
   const sortOptions4: SortType[] = ["Default", "Achieved Amount", 'I Won']
   const sortOptions5: SortType[] = ["Default", "Pending Claim", "Claimed", ]
   // Tab列表
-  const tabs: ActivityStatus[] = ["Ongoing", "Not Started", "Pending Draw", "Draw Completed", "Not Reached"]
+  const tabs: string[] = ["Ongoing", "Not Started", "Pending Draw", "Draw Completed", "Not Reached"]
   // 状态管理
-  const [activeTab, setActiveTab] = useState<ActivityStatus>("Ongoing")
+  const [activeTab, setActiveTab] = useState<string>("Ongoing")
   const [activeListNum, setactiveListNum] = useState(0)
   const [sortType, setSortType] = useState<SortType>("Default")
   const [sortDirection, setSortDirection] = useState<SortDirection>("desc")
@@ -51,7 +50,7 @@ const JoinDrawPage: React.FC = () => {
   const [list, setList] = useState<ActivityItem[]>([])
   const [sortOptionsTab, setsortOptionsTab] = useState(sortOptions1)
   // 处理Tab切换
-  const handleTabChange = (tab: ActivityStatus,index:number) => {
+  const handleTabChange = (tab: string,index:number) => {
     setActiveTab(tab)
     setactiveListNum(index)
     setList([])
@@ -102,7 +101,7 @@ const JoinDrawPage: React.FC = () => {
   }
 
   // 模拟获取数据
-  const fetchData = async (pageNum: number, status: ActivityStatus, sort: SortType, direction: SortDirection) => {
+  const fetchData = async (pageNum: number, status: string, sort: SortType, direction: SortDirection) => {
     // 模拟 API 请求
     return new Promise<ActivityItem[]>((resolve) => {
       setTimeout(() => {
@@ -174,7 +173,7 @@ const JoinDrawPage: React.FC = () => {
   return (
     <div className="activity-list-page">
       {/* 状态标签栏 */}
-      <div className="tab-bar">
+      {/* <div className="tab-bar">
         {tabs.map((tab,index) => (
           <div
             key={tab}
@@ -184,7 +183,8 @@ const JoinDrawPage: React.FC = () => {
             {tab}
           </div>
         ))}
-      </div>
+      </div> */}
+     <CurvedTabs tabs={tabs} defaultSelected="Ongoing" onTabChange={handleTabChange} />
 
       {/* 排序选项栏 */}
       <div className="sort-bar">

@@ -5,6 +5,8 @@ import JoinDrawPage from '@/pages/JoinDraw';
 import ProfilePage from '@/pages/Profile';
 import DetailPage from '@/pages/Detail';
 import AssetsPage from '@/pages/AssetsPage';
+import DrawHistoryPage from '@/pages/DrawHistory';
+import WinHistoryPage from '@/pages/WinHistory';
 
 interface Route {
   path: string;
@@ -23,6 +25,8 @@ export const routes: Route[] = [
   { path: '/profile', Component: ProfilePage },
   { path: `/detail/:id`, Component: DetailPage },
   { path: `/assets`, Component: AssetsPage },
+  { path: `/drawhistory`, Component: DrawHistoryPage },
+  { path: `/winhistory`, Component: WinHistoryPage },
 
 
 ];
