@@ -7,6 +7,7 @@ import DetailPage from '@/pages/Detail';
 import AssetsPage from '@/pages/AssetsPage';
 import DrawHistoryPage from '@/pages/DrawHistory';
 import WinHistoryPage from '@/pages/WinHistory';
+import AladdinPage from '@/pages/Aladdin';
 
 interface Route {
   path: string;
@@ -27,6 +28,7 @@ export const routes: Route[] = [
   { path: `/assets`, Component: AssetsPage },
   { path: `/drawhistory`, Component: DrawHistoryPage },
   { path: `/winhistory`, Component: WinHistoryPage },
+  { path: `/aladdin`, Component: AladdinPage },
 
 
 ];

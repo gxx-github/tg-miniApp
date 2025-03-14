@@ -41,7 +41,7 @@ const ListItem = [
     {
         icon:icon4,
         text:'About Aladdin',
-        link:''
+        link:'/aladdin'
     },
 ]
 const handleJump = (link:string)=>{
