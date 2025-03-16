@@ -136,7 +136,9 @@ const HistoryCard = <T,>({
                     }
                     <button className="details-btn">Participation Details</button>
                     {
-                        curTab === 0 && <button className="continue-btn">Claim Prize</button>
+                        curTab === 0 && <button className="continue-btn" onClick={()=>{
+                            navigate('/claim')
+                        }}>Claim Prize</button>
                     }
 
                 </div>
