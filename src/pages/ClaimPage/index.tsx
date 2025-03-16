@@ -2,6 +2,7 @@ import './index.scss';
 import { FC, useEffect, useState } from 'react';
 import select from '../../assets/claim/select@2x.png'
 import selected from '../../assets/claim/slected@2x.png'
+import { useNavigate } from 'react-router-dom';
 interface GoodsDetail {
     imgUrl: string
     tit: string
@@ -13,6 +14,7 @@ export const ClaimPage: FC = () => {
     const Tabsitem = ['Physical Prize', 'Cryptocurrency']
     const [currTab, setcurrTab] = useState(0)
     const [isSelected, setisSelected] = useState(false)
+    const navigate = useNavigate()
 
     const GoodsDom = (item: GoodsDetail) => {
         return (
@@ -52,7 +54,9 @@ export const ClaimPage: FC = () => {
                 {/* 实物 */}
                 {
                     currTab === 0 && <div className="physicalPrize">
-                        <div className="addressSelect">
+                        <div className="addressSelect" onClick={() => {
+                            navigate('/address')
+                        }}>
                             <span>Please Select a Shipping Address</span>
                             <div className="enter"></div>
                         </div>
@@ -87,11 +91,11 @@ export const ClaimPage: FC = () => {
                                 <span>Total Amount: </span>
                                 <span className="color">60 USDT</span>
                             </div>
-                            <div className="checkPolicy" onClick={()=>{
-                                    setisSelected(!isSelected) 
- 
-                                }}  >
-                                <img src={ isSelected ? selected : select } alt="" />
+                            <div className="checkPolicy" onClick={() => {
+                                setisSelected(!isSelected)
+
+                            }}  >
+                                <img src={isSelected ? selected : select} alt="" />
                                 <span className="text">I have confirmed the shipping address and agree to the Terms of Service.</span>
                             </div>
                             <div className="payButton">Pay Now</div>
@@ -117,7 +121,7 @@ export const ClaimPage: FC = () => {
                             </div>
                         </div>
                         <div className="goodsDetailDom">
-                        {
+                            {
                                 GoodsDom({
                                     imgUrl: '',
                                     tit: 'Apple iphone 16 Pro Max 512G',
@@ -125,7 +129,7 @@ export const ClaimPage: FC = () => {
                                     amount: 1000
                                 })
                             }
-                               <div className="goodsDetail">
+                            <div className="goodsDetail">
                                 <div className="itemDom">
                                     <div className="label">Achieved Amount</div>
                                     <div className="value">$ 1,000</div>

@@ -1,0 +1,39 @@
+.addressContainer {
+    width: 100%;
+    background: #F9F9F9;
+    padding: 12px 14px 34px;
+    display: flex;
+    flex-direction: column;
+
+}
+.addressListDom{
+    flex: 1;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+      }
+}
+.addAddressButton {
+    height: 44px;
+    background: #FFFFFF;
+    border-radius: 12px;
+    border: 1px solid #03DA9F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .addIcon {
+        width: 18px;
+        height: 18px;
+        border: 1px solid #00C891;
+        margin-right: 8px;
+
+    }
+
+    .text {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        font-size: 14px;
+        color: #00C891;
+    }
+}

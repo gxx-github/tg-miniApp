@@ -1,0 +1,117 @@
+.address-form {
+    padding: 12px 14px;
+    background: #F9F9F9;
+
+    .addressDom {
+        padding: 24px 12px 24px 16px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        margin-bottom: 12px;
+
+        .adm-list-body {
+            background: none;
+        }
+
+        .adm-list-item {
+            background: none;
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            .adm-list-item-content-main {
+                display: flex;
+                padding: 0;
+                align-items: center;
+
+
+                .adm-list-item-title {
+                    width: 97px;
+                    margin-right: 8px;
+
+                    label {
+                        font-family: Montserrat-Light;
+                        font-size: 14px;
+                        color: #000000;
+                    }
+                }
+
+                .adm-form-item-child {
+                    display: flex;
+                    flex: 1;
+
+                    .adm-form-item-child-inner {
+                        display: flex;
+
+                    }
+                }
+
+                .adm-input {
+                    input {
+                        height: 18px;
+                        font-family: Montserrat-Light;
+                        font-size: 14px;
+                        color: #999999;
+                    }
+                }
+            }
+        }
+    }
+
+    .cityDom {
+        padding: 24px 12px 24px 16px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        margin-bottom: 12px;
+        .adm-list-body {
+            background: none;
+        }
+
+        .adm-list-item {
+            background: none;
+            margin-bottom: 24px;
+
+            &:last-child {
+                margin: 0;
+            }
+
+            .adm-list-item-content-main {
+                display: flex;
+                padding: 0;
+                align-items: center;
+
+
+                .adm-list-item-title {
+                    width: 97px;
+                    margin-right: 8px;
+
+                    label {
+                        font-family: Montserrat-Light;
+                        font-size: 14px;
+                        color: #000000;
+                    }
+                }
+
+                .adm-form-item-child {
+                    display: flex;
+                    flex: 1;
+
+                    .adm-form-item-child-inner {
+                        display: flex;
+
+                    }
+                }
+
+                .adm-input {
+                    input {
+                        height: 18px;
+                        font-family: Montserrat-Light;
+                        font-size: 14px;
+                        color: #999999;
+                    }
+                }
+            }
+        }
+    }
+}

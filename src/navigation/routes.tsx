@@ -10,6 +10,8 @@ import WinHistoryPage from '@/pages/WinHistory';
 import AladdinPage from '@/pages/Aladdin';
 import DrawDetailPage from '@/pages/DrawDetail';
 import ClaimPage from '@/pages/ClaimPage';
+import AddressPage from '@/pages/AddressPage';
+import { AddAddressPage } from '@/pages/AddressPage/addressForm';
 
 interface Route {
   path: string;
@@ -33,6 +35,8 @@ export const routes: Route[] = [
   { path: `/aladdin`, Component: AladdinPage },
   { path: `/drawdetail/:id`, Component: DrawDetailPage },
   { path: `/claim`, Component: ClaimPage },
+  { path: `/address`, Component: AddressPage },
+  { path: `/addaddress`, Component: AddAddressPage },
 
 
 
