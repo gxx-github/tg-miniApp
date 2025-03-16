@@ -7,6 +7,7 @@ import { TimerDom } from "../Timer"
 import icon3 from '../../assets/history/icon3.png'
 import icon4 from '../../assets/history/icon4.png'
 import claimPng from '../../assets/history/toClaim@2x.png'
+import { useNavigate } from "react-router-dom"
 
 interface HistoryCardProps<T> {
     data: LotteryEntry
@@ -49,6 +50,7 @@ const HistoryCard = <T,>({
     //             return ""
     //     }
     // }
+      const navigate = useNavigate()
 
     return (
         <div key={data.id} className="entry-card">
@@ -112,7 +114,9 @@ const HistoryCard = <T,>({
             }
             {
                 cardType === 'draw' && <div className="action-buttons">
-                    <button className="details-btn">Participation Details</button>
+                    <button className="details-btn" onClick={()=>{
+                        navigate(`/drawdetail/1`)
+                    }}>Participation Details</button>
                     {
                         curTab === 0 && <button className="continue-btn">Continue Participating</button>
                     }

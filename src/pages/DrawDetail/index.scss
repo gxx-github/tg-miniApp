@@ -1,0 +1,123 @@
+.drawDetails {
+    width: 100%;
+    height: 100%;
+}
+
+.infoDom {
+    background: #FFFFFF;
+    margin-bottom: 12px;
+    padding: 17px 14px 24px;
+
+    .labelItem {
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &:last-child {
+            margin: 0;
+        }
+
+        .label {
+            font-family: Montserrat-Light;
+            font-weight: 300;
+            font-size: 13px;
+            color: #666666;
+            line-height: 13px;
+        }
+
+        .value {
+            font-family: Montserrat-Medium;
+            font-weight: 500;
+            font-size: 14px;
+            color: #000000;
+        }
+
+        .color {
+            color: #00C891;
+        }
+
+        .color1 {
+            color: rgba(0, 153, 209, 1);
+        }
+    }
+}
+
+.listContainer {
+    padding: 24px 14px;
+    background-color: #fff;
+
+    .tit {
+        font-family: Montserrat-Medium;
+        font-weight: 500;
+        font-size: 15px;
+        color: #000000;
+        line-height: 15px;
+        margin-bottom: 24px;
+    }
+
+    .listhisDom {
+        width: 100%;
+
+        .ListItem {
+            display: flex;
+            align-items: center;
+            font-family: Montserrat-Light;
+            font-size: 13px;
+            color: #666666;
+            padding: 16px 0;
+            border-bottom: 1px solid #F7F7F7;
+
+            >div {
+                &:nth-child(1) {
+                    width: 166px;
+                    text-align: left;
+                }
+
+                &:nth-child(2) {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+
+                    >img {
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 8px;
+                    }
+
+                }
+
+                &:nth-child(3) {
+                    width: 90px;
+                    text-align: right;
+
+                    .color1 {
+                        color: rgba(0, 153, 209, 1);
+                    }
+                }
+            }
+        }
+
+        .header {
+            border: none;
+            margin: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+//dialog
+.roundModel {
+    .adm-center-popup-wrap {
+        min-width: 337px;
+        width: 337px;
+        height: 323px;
+        .adm-center-popup-body{
+            padding: 0;
+            background: none !important;
+            .adm-dialog-content{
+                padding: 0;
+            }
+        }
+    }
+}

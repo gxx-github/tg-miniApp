@@ -1,0 +1,50 @@
+.muberModel {
+    width: 337px;
+    height: 323px;
+    background: url('../../assets//common/modelBg@2x.png');
+    background-size: 100% 100%;
+    padding: 56px 27px 24px 12px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+
+}
+.close{
+    position: absolute;
+    bottom: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    background: url('../../assets/common/close@2x.png');
+    background-size: 100% 100%;
+    cursor: pointer;
+}
+.textDom {
+    height: 66px;
+    font-family: Montserrat-Medium;
+
+    .text1 {
+        font-weight: 500;
+        font-size: 18px;
+        color: #000000;
+    }
+
+    .text2 {
+        font-weight: 500;
+        font-size: 26px;
+        color: #000000;
+        line-height: 26px;
+    }
+}
+
+.con {
+    flex: 1;
+    overflow-y: scroll;
+    background: #fcc;
+    padding: 16px 12px;
+    font-family: Montserrat-Light;
+    font-size: 14px;
+    color: #000000;
+    line-height: 24px;
+}

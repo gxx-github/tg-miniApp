@@ -8,6 +8,7 @@ import AssetsPage from '@/pages/AssetsPage';
 import DrawHistoryPage from '@/pages/DrawHistory';
 import WinHistoryPage from '@/pages/WinHistory';
 import AladdinPage from '@/pages/Aladdin';
+import DrawDetailPage from '@/pages/DrawDetail';
 
 interface Route {
   path: string;
@@ -29,6 +30,8 @@ export const routes: Route[] = [
   { path: `/drawhistory`, Component: DrawHistoryPage },
   { path: `/winhistory`, Component: WinHistoryPage },
   { path: `/aladdin`, Component: AladdinPage },
+  { path: `/drawdetail/:id`, Component: DrawDetailPage },
+
 
 
 ];
